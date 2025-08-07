@@ -60,6 +60,11 @@ If it logs in **without a password**, you're good to go.
      ```bash
      cat ~/.ssh/id_rsa
      ```
+ paste the content from 
+-----BEGIN OPENSSH PRIVATE KEY-----
+b............................
+..........................ID
+-----END OPENSSH PRIVATE KEY-----"
 
    * Add description: e.g., `labuser-ssh-key`
 
