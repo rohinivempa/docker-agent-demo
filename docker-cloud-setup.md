@@ -33,8 +33,23 @@ Manage Jenkins → Manage Nodes and Clouds → Configure Clouds
 
 ---
 
-### 3. Set Docker Host URI
+### 3. For SimpliLearn Lab (Using Local Docker)
 
+If you're using Jenkins in the **SimpliLearn lab environment**, Docker runs locally. You must allow the Jenkins user to access the Docker socket.
+
+Run the following commands:
+
+```bash
+sudo usermod -aG docker jenkins
+```
+```
+sudo systemctl restart jenkins
+````
+
+> Note: Restarting Jenkins is required for the new group permissions to take effect.
+---
+
+### 4. Set Docker Host URI
 - For **local Docker daemon** (running on same host as Jenkins):
 
 ```
@@ -49,24 +64,6 @@ unix:///var/run/docker.sock
 tcp\://\<DOCKER\_HOST>:2375
 
 ```
-
----
-
-### 4. For SimpliLearn Lab (Using Local Docker)
-
-If you're using Jenkins in the **SimpliLearn lab environment**, Docker runs locally. You must allow the Jenkins user to access the Docker socket.
-
-Run the following commands:
-
-```bash
-sudo usermod -aG docker jenkins
-```
-```
-sudo systemctl restart jenkins
-````
-
-> Note: Restarting Jenkins is required for the new group permissions to take effect.
-
 ---
 
 ### 5. Validate Connection
